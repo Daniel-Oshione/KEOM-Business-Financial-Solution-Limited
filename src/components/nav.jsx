@@ -15,7 +15,7 @@ function NavLinks() {
   const location = useLocation();
 
   return (
-    <Navbar fluid rounded className="!bg-transparent">
+    <Navbar fluid rounded className="!pl-10 !pr-10 !bg-transparent !bg-sky-100">
       <NavbarBrand as={Link} to="/" className="p-0 border-0">
         <img src={logo} alt="Logo" className="h-10 rounded-lg md:h-20" />
       </NavbarBrand>
@@ -39,8 +39,8 @@ function NavLinks() {
           className={`!px-4 !py-2 !rounded-lg !transition-colors !duration-300
     ${
       location.pathname === "/"
-        ? "!text-white md:!bg-sky-500" // Active state: White text, Sky blue background
-        : "!text-black hover:!text-white md:hover:!bg-sky-400" // Inactive state: Black text, White hover text, Sky blue background hover
+        ? "!text-white md:!bg-sky-500" 
+        : "!text-black hover:!text-white md:hover:!bg-sky-400" 
     }
   `}
         >
@@ -53,8 +53,8 @@ function NavLinks() {
           className={`!px-4 !py-2 !rounded-lg !transition-colors !duration-300
     ${
       location.pathname === "/about"
-        ? "!text-white md:!bg-sky-500" // Active state: White text, Sky blue background
-        : "!text-black hover:!text-white md:hover:!bg-sky-400" // Inactive state: Black text, White hover text, Sky blue background hover
+        ? "!text-white md:!bg-sky-500" 
+        : "!text-black hover:!text-white md:hover:!bg-sky-400" 
     }
   `}
         >
@@ -67,8 +67,8 @@ function NavLinks() {
           className={`!px-4 !py-2 !rounded-lg !transition-colors !duration-300
     ${
       location.pathname === "/services"
-        ? "!text-white md:!bg-sky-500" // Active state: White text, Sky blue background
-        : "!text-black hover:!text-white md:hover:!bg-sky-400" // Inactive state: Black text, White hover text, Sky blue background hover
+        ? "!text-white md:!bg-sky-500" 
+        : "!text-black hover:!text-white md:hover:!bg-sky-400" 
     }
   `}
         >
@@ -81,8 +81,8 @@ function NavLinks() {
           className={`!px-4 !py-2 !rounded-lg !transition-colors !duration-300
     ${
       location.pathname === "/contact"
-        ? "!text-white md:!bg-sky-500" // Active state: White text, Sky blue background
-        : "!text-black hover:!text-white md:hover:!bg-sky-400" // Inactive state: Black text, White hover text, Sky blue background hover
+        ? "!text-white md:!bg-sky-500"
+        : "!text-black hover:!text-white md:hover:!bg-sky-400" 
     }
   `}
         >

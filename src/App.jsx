@@ -7,11 +7,12 @@ import HomePage from './Pages/Home.jsx'
 import AboutUs from './Pages/AboutUs.jsx'
 import Contact from './Pages/Contact.jsx'
 import Services from './Pages/Services.jsx'
+import Footer from './components/footer.jsx'
 
 function App() {
   return (
     <>
-    <div className="App !pl-10 !pr-10">
+    <div className="App">
       <NavLinks />
       <Routes>
         <Route path="/" element={<HomePage />} />
@@ -19,6 +20,7 @@ function App() {
         <Route path="/contact" element={<Contact />} />
         <Route path="/services" element={<Services />} />
       </Routes>
+      <Footer />
       </div>
     </>
   )
