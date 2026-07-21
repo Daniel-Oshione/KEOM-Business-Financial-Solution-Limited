@@ -13,7 +13,7 @@ export default function Footer() {
           <div className="space-y-4 md:col-span-1">
             <img src={logo} alt="KEOM Logo" className="h-10 rounded-lg" />
             <p className="text-xs text-gray-600 leading-relaxed">
-              Empowering businesses with innovative business, financial, and human capital solutions.
+              Empowering businesses with innovative ideas, financial and human capital solutions.
             </p>
                         <div className="flex gap-3 text-xs pt-2">
               <a href="https://www.linkedin.com/company/keom-business-and-financial-solutions-limited/" target="_blank" rel="noreferrer" className="text-sky-600 hover:underline"><img src={linkedin} alt="KEOM linkedin logo" className="h-10" /></a>
@@ -36,7 +36,7 @@ export default function Footer() {
           <div className="space-y-3">
             <h4 className="font-semibold text-gray-900 text-sm">Office</h4>
             <p className="text-xs text-gray-600">
-              POATSON House, 3rd Floor,<br />
+              POATSON House,<br />
               142 Oba Akran Avenue,<br />
               Ikeja, Lagos, Nigeria.
             </p>

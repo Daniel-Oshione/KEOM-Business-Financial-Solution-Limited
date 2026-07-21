@@ -15,9 +15,9 @@ function NavLinks() {
   const location = useLocation();
 
   return (
-    <Navbar fluid rounded className="!pl-10 !pr-10 !bg-transparent !bg-sky-100">
+    <Navbar fluid className="sticky top-0 z-50 !pl-10 !pr-10 !border-b !border-sky-200 !bg-white">
       <NavbarBrand as={Link} to="/" className="p-0 border-0">
-        <img src={logo} alt="Logo" className="h-10 rounded-lg md:h-20" />
+        <img src={logo} alt="Logo" className="h-10 rounded-lg md:h-14 md:w-40 pl-2 pr-2" />
       </NavbarBrand>
 
       <div className="flex md:order-2 gap-2">
