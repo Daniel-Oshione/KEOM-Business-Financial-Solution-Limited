@@ -24,7 +24,7 @@ function NavLinks() {
         <CustomButton
           as={Link}
           to="/contact"
-          className="!bg-sky-300 hover:!bg-sky-400 !border !border-sky-600 !ring-0 focus:!ring-0 !transition-colors !duration-300"
+          className="!bg-sky-400 hover:!bg-sky-600 !border !border-sky-600 !ring-0 focus:!ring-0 !transition-colors !duration-300"
         >
           Get started
         </CustomButton>
