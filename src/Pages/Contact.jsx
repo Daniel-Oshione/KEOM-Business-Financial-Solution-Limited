@@ -33,7 +33,7 @@ export default function Contact() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(() => {
-        setStatus("Message sent successfully! We will get back to you.");
+        setStatus("Message sent successfully! We will get back to you so please kindly check your inbox or spam folder.");
         setFormData({ name: "", email: "", message: "" });
         
       })
