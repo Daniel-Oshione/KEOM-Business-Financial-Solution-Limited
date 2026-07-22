@@ -2,7 +2,7 @@
   "name": "keompackage",
   "private": true,
   "version": "0.0.0",
-  "homepage": ".",
+  "homePage": ".",
   "type": "module",
   "scripts": {
     "dev": "vite",
