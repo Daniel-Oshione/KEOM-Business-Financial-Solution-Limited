@@ -7,8 +7,8 @@ import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <HashRouter>
+    <BrowserRouter basename="/KEOM-Business-Financial-Solution-Limited/">
       <App />
-    </HashRouter>
+    </BrowserRouter>
   </StrictMode>,
 )
