@@ -167,7 +167,7 @@ export default function Services() {
             Every organization possesses a unique corporate ecosystem. Speak with our multidisciplinary consultants to build an integrated strategy customized precisely to your business requirements.
           </p>
           <div className="pt-2">
-            <CustomButton as={Link} to="/contact" className="!bg-white !text-sky-600 hover:!bg-sky-50 !font-bold !px-8 !py-3.5 shadow-sm transition-transform hover:scale-105">
+            <CustomButton as={Link} to="/contact" className="!bg-white !text-sky-600 hover:!bg-sky-50 !font-bold !px-8 !py-3.5 shadow-sm !transition-colors !duration-300">
               Schedule an Advisor Consultation
             </CustomButton>
           </div>
