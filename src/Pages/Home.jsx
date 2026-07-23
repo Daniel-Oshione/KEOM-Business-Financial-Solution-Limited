@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
-import CustomButton from "../Components/Button";
+import CustomButton from "../components/Button";
 import heroBg from "../assets/herobg.webp";
+import { Helmet } from 'react-helmet-async';
 
 export default function HomePage() {
   const highlights = [
@@ -46,6 +47,10 @@ export default function HomePage() {
 
   return (
     <div className="space-y-20 pb-16 font-sans text-gray-800 selection:bg-sky-100 selection:text-sky-700">
+      <Helmet>
+        <title>KEOM Business & Financial Solutions Limited | Advisory Firm in Lagos</title>
+        <meta name="description" content="KEOM delivers business advisory, financial advisory, and human capital solutions to help organizations across Africa scale and grow sustainably." />
+      </Helmet>
       {/* Hero Section */}
       <section
         className="relative text-center py-24 md:py-36 px-6 overflow-hidden bg-cover bg-center transition-all duration-500"

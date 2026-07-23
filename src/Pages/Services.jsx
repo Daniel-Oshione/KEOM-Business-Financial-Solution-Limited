@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import CustomButton from '../Components/Button';
+import CustomButton from '../components/Button';
+import { Helmet } from 'react-helmet-async';
 
 export default function Services() {
   const serviceDivisions = [
@@ -87,7 +88,10 @@ export default function Services() {
 
   return (
     <div className="space-y-20 py-12 font-sans text-gray-800 selection:bg-sky-100 selection:text-sky-700">
-      
+      <Helmet>
+        <title>Our Services | KEOM Business & Financial Solutions</title>
+        <meta name="description" content="Explore KEOM's comprehensive advisory services, including business strategy, financial advisory, human capital solutions, and learning & development programs." />
+      </Helmet>
       {/* Page Header */}
       <section className="text-center max-w-3xl mx-auto px-4 space-y-4">
         <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight text-gray-900">

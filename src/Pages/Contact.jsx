@@ -1,16 +1,19 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
-import CustomButton from "../Components/Button";
+import CustomButton from "../components/Button";
 import linkedin from "../assets/linkedin.png";
 import Instagram from "../assets/instagram.png";
+import { Helmet } from "react-helmet-async";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
+    honeypot: "",
   });
   const [status, setStatus] = useState("");
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -18,6 +21,8 @@ export default function Contact() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (formData.honeypot) return; // silently reject bots
+    setIsSending(true);
     setStatus("Sending...");
 
     // Email form submit api call
@@ -33,18 +38,27 @@ export default function Contact() {
         import.meta.env.VITE_EMAILJS_PUBLIC_KEY,
       )
       .then(() => {
-        setStatus("Message sent successfully! We will get back to you so please kindly check your inbox or spam folder.");
-        setFormData({ name: "", email: "", message: "" });
-        
+        setStatus(
+          "Message sent successfully! We will get back to you as soon as possible, so please kindly check your inbox or spam folder.",
+        );
+        setFormData({ name: "", email: "", message: "", honeypot: "" });
       })
       .catch((error) => {
         console.error("FAILED...", error);
         setStatus("Failed to send message. Please try again later.");
-      });
+      })
+      .finally(() => setIsSending(false));
   };
 
   return (
     <div className="space-y-12 py-12 font-sans text-gray-800 max-w-5xl mx-auto px-4">
+      <Helmet>
+        <title>Contact Us | KEOM Business & Financial Solutions</title>
+        <meta
+          name="description"
+          content="Get in touch with KEOM Business & Financial Solutions Limited. Fill out the contact form or reach us via email or phone."
+        />
+      </Helmet>
       {/* Header */}
       <section className="text-center max-w-2xl mx-auto">
         <h1 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">
@@ -114,6 +128,17 @@ export default function Contact() {
             Send Us a Message
           </h3>
           <form onSubmit={handleSubmit} className="space-y-4">
+            {/* Honeypot field - hidden from real users, bots fill it in */}
+            <input
+              type="text"
+              name="honeypot"
+              value={formData.honeypot}
+              onChange={handleChange}
+              style={{ display: "none" }}
+              tabIndex="-1"
+              autoComplete="off"
+            />
+
             <div>
               <label className="block text-xs font-semibold text-gray-700 uppercase mb-1">
                 Full Name
@@ -158,13 +183,17 @@ export default function Contact() {
             </div>
             <CustomButton
               type="submit"
-              className="w-full !bg-sky-500 hover:!bg-sky-600 !text-white !py-3 !font-semibold !ring-0 focus:!ring-0 !transition-colors !duration-300"
+              disabled={isSending}
+              className="w-full !bg-sky-500 hover:!bg-sky-600 !text-white !py-3 !font-semibold !ring-0 focus:!ring-0 !transition-colors !duration-300 disabled:opacity-50"
             >
-              Send Message
+              {isSending ? "Sending..." : "Send Message"}
             </CustomButton>
 
             {status && (
-              <p className="text-xs text-center font-medium text-sky-600 pt-2">
+              <p
+                aria-live="polite"
+                className="text-xs text-center font-medium text-sky-600 pt-2"
+              >
                 {status}
               </p>
             )}

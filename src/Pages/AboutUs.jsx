@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
-import CustomButton from '../Components/Button';
+import CustomButton from '../components/Button';
+import { Helmet } from 'react-helmet-async';
 
 export default function AboutUs() {
   const coreValues = [
@@ -28,8 +29,12 @@ export default function AboutUs() {
   ];
 
   return (
+
     <div className="space-y-16 py-12 font-sans text-gray-800">
-      
+      <Helmet>
+  <title>About Us | KEOM Business & Financial Solutions</title>
+  <meta name="description" content="15+ years of combined advisory experience. Learn about KEOM's mission, vision, and core values as a trusted business consultancy in Africa." />
+</Helmet>
       {/* Page Header */}
       <section className="text-center max-w-3xl mx-auto px-4">
         <h1 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
